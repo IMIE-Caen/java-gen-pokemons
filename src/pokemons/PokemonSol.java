@@ -20,7 +20,7 @@ public class PokemonSol extends Pokemon{
     
     public PokemonSol() {
         super( NOMS[new Random().nextInt(NOMS.length)] ,
-               15 + new Random().nextInt(11) );
+               150 + new Random().nextInt(11) );
     }
     
 }

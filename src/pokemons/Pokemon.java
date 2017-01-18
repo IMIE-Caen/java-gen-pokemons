@@ -5,6 +5,7 @@
  */
 package pokemons;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -15,6 +16,7 @@ public abstract class Pokemon {
 
     private int pv;
     private String nom;
+    private ArrayList<Attaque> attaques = new ArrayList();
 
     public Pokemon(String nom, int pv) {
         this.nom = nom;
@@ -30,6 +32,11 @@ public abstract class Pokemon {
         Pokemon pok = (Pokemon)klass.newInstance();
         
         return pok;
+    }
+    
+    public void apprendre(Attaque attaque){
+        if(this.attaques.size() < 4)
+            this.attaques.add(attaque);
     }
 
     
@@ -51,6 +58,16 @@ public abstract class Pokemon {
         if(this.pv < 0){
             this.pv= 0;
         }
+    }
+
+    public ArrayList<Attaque> getAttaques() {
+        return this.attaques;
+    }
+
+    void attaque(Pokemon adversaire, Attaque attaque) {
+       if(attaque.getNom().equals("Destruction"))
+           this.pv = 0;
+       adversaire.degat(attaque.getForce());
     }
   
     
