@@ -21,6 +21,7 @@ public class Combat {
 
     public void doCombat(){
         while(tab[0].getPv() > 0 && tab[1].getPv() > 0 ){
+            System.out.println("---------");
             for(Pokemon pok : tab){
                int valeurDegat = new Random().nextInt(4);
                System.out.println(pok + " perd " + valeurDegat + "pv");
@@ -30,6 +31,19 @@ public class Combat {
                    return;
                }
             }
+            
+        }
+    }
+    
+    public Pokemon getVainqueur(){
+        if(tab[0].getPv() == 0){
+           return tab[1]; 
+        }
+        else if(tab[1].getPv() == 0){
+            return tab[0];
+        }
+        else {
+            return null;
         }
     }
     
