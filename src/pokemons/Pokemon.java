@@ -7,6 +7,7 @@ package pokemons;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -67,7 +68,19 @@ public abstract class Pokemon {
     void attaque(Pokemon adversaire, Attaque attaque) {
        if(attaque.getNom().equals("Destruction"))
            this.pv = 0;
-       adversaire.degat(attaque.getForce());
+       System.out.println(adversaire + " perd " + attaque.getForce() + "pv");
+       adversaire.degat(attaque.getForce());     
+       
+    }
+
+    Attaque choisirAttaque() {
+        System.out.println("Choisissez votre attaque");
+        for(int i = 0 ; i < 4 ; i++){
+            System.out.println( (i+1) + ") " + this.attaques.get(i).getNom());
+        }
+        Scanner keyboard = new Scanner(System.in);
+        int choix = keyboard.nextInt();
+        return this.attaques.get( choix - 1);
     }
   
     

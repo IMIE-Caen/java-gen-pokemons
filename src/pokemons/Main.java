@@ -30,25 +30,26 @@ public class Main {
         monPokemon.apprendre(a4);
         monPokemon.apprendre(a5);
         
-        for(Attaque prout : monPokemon.getAttaques()){
+        /*for(Attaque prout : monPokemon.getAttaques()){
             System.out.println(prout);            
-        }
+        }*/
         
         
         Pokemon adversaire = Pokemon.pokemonAleatoire();
        
-        monPokemon.attaque(adversaire, a4);
+     
+        
         
         System.out.println(monPokemon);
         System.out.println(adversaire);
         
         
-        /*Combat combat1 = new Combat( monPokemon, adversaire );
+        Combat combat1 = new Combat( monPokemon, adversaire );
         
         System.out.println(combat1);
         combat1.doCombat();
         System.out.println("Vainqueur : " + combat1.getVainqueur());
-       */
+       
         
     }
     

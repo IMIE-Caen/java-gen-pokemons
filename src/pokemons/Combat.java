@@ -20,35 +20,36 @@ public class Combat {
     }
 
     public void doCombat(){
-        /*int i = 1;
+        int i = 1;
         while(tab[0].getPv() > 0 && tab[1].getPv() > 0 ){         
             
             Pokemon pokJoueur = tab[0];
-            System.out.println("-----TOUR "+ i +"----");
-            
-            if(pokJoueur.getPv() == 0){
-                return;
-            }            
-            i++;
-            
-            
             Pokemon pokAdversaire = tab[1];
-            System.out.println("-----TOUR "+ i +"----");
+            
+            // AIE AIE AIE AIE
+            
+            System.out.println("-----TOUR "+ i +" (JOUEUR)----");
+            pokJoueur.attaque(pokAdversaire, pokJoueur.choisirAttaque());
+            
             i++;
             
-            /*
-            for(Pokemon pok : tab){
-               
-               int valeurDegat = new Random().nextInt(4);
-               System.out.println(pok + " perd " + valeurDegat + "pv");
-               pok.degat(valeurDegat);
-               // Pas terrible mais bon
-               
-               
-            }
+            if(pokJoueur.getPv() == 0 || pokAdversaire.getPv() == 0){
+                return;
+            }     
+
+            
+            
+            
+            System.out.println("-----TOUR "+ i +"----");
+            pokAdversaire.attaque(pokJoueur, new Attaque("ALEATOIRE",
+                                                    new Random().nextInt(71)));
+            
+            i++;
+            
+         
             
         }
-        */
+        
     }
     
     public Pokemon getVainqueur(){
