@@ -5,6 +5,8 @@
  */
 package pokemons;
 
+import java.util.Random;
+
 /**
  *
  * @author clement
@@ -13,10 +15,20 @@ public class Pokemon {
 
     private int pv;
     private String nom;
+    public static final String[] NOMS = {"Pikachu", "Carapuce", "Bulbizarre", "Miaouss"};
 
     public Pokemon(String nom, int pv) {
         this.nom = nom;
         this.pv = pv;
+    }
+
+    public Pokemon() {
+        /*
+        this.nom = NOMS[new Random().nextInt(NOMS.length)];
+        this.pv = 15 + new Random().nextInt(11);
+        */
+        this( NOMS[new Random().nextInt(NOMS.length)] ,
+               15 + new Random().nextInt(11) );
     }
     
     public String getNom() {

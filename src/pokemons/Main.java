@@ -16,23 +16,17 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Pokemon carapuce = new Pokemon("Carapuce", 20);
-        Pokemon miaouss = new Pokemon("Miaouss", 20);
+        Pokemon monPokemon = new Pokemon(Pokemon.NOMS[1], 20);
+        Pokemon adversaire = new Pokemon();
         
+        Combat combat1 = new Combat( monPokemon, adversaire );
         
-        
-        
-        Combat combat1 = new Combat( carapuce, miaouss );
-        
-        echo(combat1);
+        System.out.println(combat1);
         combat1.doCombat();
-        echo(combat1);
+        System.out.println(combat1);
       
     }
     
     
-    public static void echo(Object obj){
-        System.out.println(obj);    
-    }
     
 }

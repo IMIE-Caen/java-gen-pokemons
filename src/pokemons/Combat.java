@@ -23,8 +23,12 @@ public class Combat {
         while(tab[0].getPv() > 0 && tab[1].getPv() > 0 ){
             for(Pokemon pok : tab){
                int valeurDegat = new Random().nextInt(4);
-               Main.echo(pok + " perd " + valeurDegat + "pv");
+               System.out.println(pok + " perd " + valeurDegat + "pv");
                pok.degat(valeurDegat);
+               // Pas terrible mais bon
+               if(pok.getPv() == 0){
+                   return;
+               }
             }
         }
     }
