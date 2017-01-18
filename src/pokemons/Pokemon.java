@@ -20,6 +20,17 @@ public abstract class Pokemon {
         this.nom = nom;
         this.pv = pv;
     }
+    
+    
+    // une à-peu-près-factory
+    public static Pokemon pokemonAleatoire() throws Exception{
+        String[] tab = { "PokemonElectrik", "PokemonSol" }; 
+        
+        Class klass = Class.forName("pokemons." + tab[new Random().nextInt(tab.length)]);
+        Pokemon pok = (Pokemon)klass.newInstance();
+        
+        return pok;
+    }
 
     
     public String getNom() {
